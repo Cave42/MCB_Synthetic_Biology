@@ -67,10 +67,24 @@
 
 == Background and significance
 
-Although 
-test @makhsousWithinHostRhinovirusEvolution2024
+Each year, half the world's population contracts some form of the common cold. @turnerCommonCold2012 
+Cold symptoms while generally mild, still have large scale economic impacts due to the effect on productivity. @bramleyProductivityLossesRelated2002
+For immunocompromised individuals, it can be much more severe. @kraftSeverityHumanRhinovirus2012
+There are many viruses responsible for the common cold; rhinoviruses are responsible at least half of cold illnesses. @turnerCommonCold2012
+Despite this, research in the area has been overshadowed by influenza and Sars-CoV-2.
+A vaccine or an effective antiviral treatment does not exist currently for rhinoviruses.  @leeClinicalSignificanceRhinoviruses2025
+
+There are three subtypes of rhinoviruses A, B, and C, which are then further subdivided; there exist over 160 serotypes for rhinoviruses. @leeHumanRhinovirusSpecies2012
+The variety that exists in rhinoviruses presents a problem in vaccine development: how to create a vaccine that is representative of many serotypes as possible. 
+Like other members of the Picornaviridae
+
+The introduction of protein language models (PLMs) presents a 
+
+
 
 == Innovation
+
+This project looks to further research an understudied virus, an attempt.
 
 == Approach
 

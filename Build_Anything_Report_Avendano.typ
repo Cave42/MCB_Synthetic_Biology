@@ -1,7 +1,7 @@
 #set document(title: "My Doc")
 #set page(
   paper: "us-letter",
-  margin: 1in,
+  margin: 0.5in,
   header: context {
     let h1-hits = query(heading.where(level: 1).before(here()))
     let h2-hits = query(heading.where(level: 2).before(here()))
@@ -21,8 +21,8 @@
     )
   },
 )
-#set text(font: "Palatino", size: 11pt, fill: rgb("#111111"))
-#set par(leading: 0.75em, spacing: 1.5em, justify: true)
+#set text(font: "Arial", size: 11pt, fill: rgb("#111111"))
+#set par(leading: 0.65em, spacing: 1em, justify: true)
 
 #show heading.where(level: 1): it => {
   v(2em, weak: true)
@@ -88,7 +88,8 @@ Designing a PLM model trained on PhiP-Seq data could identify new important epit
 
 == Innovation
 
-This project looks research an understudied virus, rhinovirus and use phage display data train a new large language model.
+This project looks research an understudied virus, rhinovirus and generate large amounts of phage display data.
+Phage data train will be used to train a new large language model, where both the model and phage display data will be open source, available for public use.
 This model will help determine new epitope regions in the rhinovirus capsid and identify the sites to target to develop a novel vaccine.
 
 == Approach

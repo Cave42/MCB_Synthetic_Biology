@@ -88,7 +88,8 @@ Designing a PLM model trained on PhiP-Seq data could identify new important epit
 
 == Innovation
 
-This project looks to further research an understudied virus, an attempt.
+This project looks research an understudied virus, rhinovirus and use phage display data train a new large language model.
+This model will help determine new epitope regions in the rhinovirus capsid and identify the sites to target to develop a novel vaccine.
 
 == Approach
 

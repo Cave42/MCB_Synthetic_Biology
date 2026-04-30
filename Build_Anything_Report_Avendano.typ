@@ -94,6 +94,14 @@ This model will help determine new epitope regions in the rhinovirus capsid and 
 
 == Approach
 
+=== Aim 1 Design and implement a phage display library
+
+=== Aim 2 Train a PLM on phage display data
+
+=== Aim 3 Predict epitope sites and produce new phage libraries
+
+feed forward.
+
 == Summary
 
 #bibliography("MCB_Build_Anything.bib", title: "References", style: "ieee")

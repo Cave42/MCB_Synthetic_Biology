@@ -96,9 +96,25 @@ This model will help determine new epitope regions in the rhinovirus capsid and 
 
 === Aim 1 Design and implement a phage display library
 
+A sequencing library of rhinovirus predicted epitopes and another capsid proteins will be compiled.
+To prevent the library from getting too large, epitopes and capsid protein will be clustered based on site similarity, choosing proteins that encompass the largest amount serotypes.
+
+A deep mutational scan library would be invaluable for this research but also presents the same issue of blowing the library size up.
+An alanine scanning library will be built instead, where for a given protein, a new protein will be designed with one alanine placed at each position of the protein, incrementing by a position of one. This alanine scan will show which specific residues are essential to illicit and immune response.
+
+These steps will ensure that the initial phage display library will be based of proteins that are representative of most serotypes while still being a responsible size for cost and time. The proteins of this new library will be inserted into the capsid protein genome of the phage to be built into part of the capsid by the phage.
+
+Phages will be grown and incubated in a medium with E. coli, to ensure that there are multiple copies of each phage. 
+Diluted samples from this medium will be tested against human sera, where phages that are bound to by IgG, will be separated, lysed and sequenced.
+
+The human sera, will be of a highly diverse collection of individuals who have all been infected with rhinovirus through prior infection.
+
 Alanine significance
 
 === Aim 2 Train a PLM on phage display data
+
+A masked language model will be built trained on the capsid protein of rhinovirus.
+The dataset will include all the serotypes of rhinovirus and also metagenomic sequencing data for rhinovirus from SRA, to encompass all currently discovered mutations. To further expand this dataset other Picornaviridae capsid proteins will be included.
 
 Fine tune on 3d models
 
@@ -107,6 +123,8 @@ K means clustering to identify embeddings, predicted epitopes that encompass the
 === Aim 3 Predict epitope sites and produce new phage libraries
 
 feed forward.
+
+what gets the biggest immune reponse accross patients.
 
 == Summary
 

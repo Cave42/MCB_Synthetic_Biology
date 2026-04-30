@@ -76,11 +76,15 @@ A vaccine or an effective antiviral treatment does not exist currently for rhino
 
 There are three subtypes of rhinoviruses A, B, and C, which are then further subdivided; there exist over 160 serotypes for rhinoviruses. @leeHumanRhinovirusSpecies2012
 The variety that exists in rhinoviruses presents a problem in vaccine development: how to create a vaccine that is representative of many serotypes as possible. 
-Like other members of the Picornaviridae
+Like other members of the Picornaviridae family, rhinoviruses are enveloped by a capsid and there are many regions that conserved. Identifying rhinoviruses epitopes and sites that illicit immune response could be the key to solving this year's long issue. @mcleanVaccineStrategiesInduce2019
 
-The introduction of protein language models (PLMs) presents a 
+The introduction of protein language models (PLMs) has been made huge impacts in the field biology, with the ability to condense large datasets and discover new patterns in this noise.
+These models have been used to develop tools from viral forecasting prediction like in CovFit @itoProteinLanguageModel2025a, to modeling antibody sequences like in AbLang @olsenAbLangAntibodyLanguage2022. 
 
-
+In Phage ImmunoPrecipitation (PhiP-Seq) bacteriophage genetic code can be modified to display any protein on its capsid. 
+The process is high throughput, where thousands of custom bacteriophages can be generated and assembled and tested against human sera to illicit immune response. @tiuPhageImmunoPrecipitationSequencing2022
+Many rhinoviruses epitopes are internal and not well studied, PhiP-Seq can display any protein. 
+Designing a PLM model trained on PhiP-Seq data could identify new important epitopes for a rhinovirus vaccine. 
 
 == Innovation
 

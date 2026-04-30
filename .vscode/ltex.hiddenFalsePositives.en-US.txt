@@ -1,0 +1,1 @@
+{"rule":"MD_BASEFORM","sentence":"^\\QSince PhiP-Seq only tests for linear epitopes, the model will further fine-tuned on the 3D structural embeddings from PhiP-Seq proteins run through AlphaFold.\\E$"}

@@ -96,7 +96,13 @@ This model will help determine new epitope regions in the rhinovirus capsid and 
 
 === Aim 1 Design and implement a phage display library
 
+Alanine significance
+
 === Aim 2 Train a PLM on phage display data
+
+Fine tune on 3d models
+
+K means clustering to identify embeddings, predicted epitopes that encompass the most amount of serotypes as possible.
 
 === Aim 3 Predict epitope sites and produce new phage libraries
 

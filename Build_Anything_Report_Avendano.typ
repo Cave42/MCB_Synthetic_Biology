@@ -76,15 +76,15 @@ A vaccine or an effective antiviral treatment does not exist currently for rhino
 
 There are three subtypes of rhinoviruses A, B, and C, which are then further subdivided; there exist over 160 serotypes for rhinoviruses. @leeHumanRhinovirusSpecies2012
 The variety that exists in rhinoviruses presents a problem in vaccine development: how to create a vaccine that is representative of many serotypes as possible. 
-Like other members of the Picornaviridae family, rhinoviruses are enveloped by a capsid and there are many regions that are conserved. Identifying rhinovirus epitopes and sites that elicit an immune response could be the key to solving this years-long issue. @mcleanVaccineStrategiesInduce2019
+Like other members of the Picornaviridae family, rhinoviruses are non-enveloped, enclosed in a protein capsid; there are many regions that are conserved. Identifying rhinovirus epitopes and sites that elicit an immune response could be the key to solving this years-long issue. @mcleanVaccineStrategiesInduce2019
 
 The introduction of protein language models (PLMs) has made huge impacts in the field of biology.
 Models such as ESM3 are trained on hundreds of millions of proteins with the ability to condense large datasets and discover new patterns in this noise @Simulating500Million.
 These models have been used to develop tools for viral forecasting like in CovFit @itoProteinLanguageModel2025a, to modeling antibody sequences like in AbLang @olsenAbLangAntibodyLanguage2022. 
 
-In Phage ImmunoPrecipitation (PhiP-Seq), bacteriophage genetic code can be modified to display any protein on its capsid. 
+In Phage ImmunoPrecipitation (PhiP-Seq), bacteriophage genetic code can be modified to display short peptide fragments derived from any protein on its capsid.
 The process is high throughput, where thousands of custom bacteriophages can be generated, assembled, and tested against human sera to elicit an immune response. @tiuPhageImmunoPrecipitationSequencing2022
-Many rhinovirus epitopes are internal and not well studied; PhiP-Seq can display any protein. 
+Many rhinovirus epitopes are internal and not well studied; PhiP-Seq can display peptide fragments from any protein.
 Designing a PLM trained on PhiP-Seq data could identify new important epitopes for a rhinovirus vaccine. 
 
 == Innovation
@@ -101,7 +101,7 @@ A sequencing library of rhinovirus predicted epitopes and other capsid proteins 
 To prevent the library from getting too large, epitopes and capsid protein will be clustered based on site similarity, choosing proteins that encompass the largest number of serotypes.
 
 A deep mutational scan library would be invaluable for this research but also presents the same issue of blowing the library size up.
-An alanine scanning library will be built instead, where for a given protein, a new protein will be designed with one alanine placed at each position of the protein, incrementing by a position of one. This alanine scan will show which specific residues are essential to illicit and immune response.
+An alanine scanning library will be built instead, where for a given protein, a new protein will be designed with one alanine placed at each position of the protein, incrementing by a position of one. This alanine scan will show which specific residues are essential to elicit an immune response.
 
 These steps will ensure that the initial phage display library will be based on proteins that are representative of most serotypes while still being a responsible size for cost and time. The proteins of this new library will be inserted into the capsid protein genome of the phage to be built into part of the capsid by the phage.
 
@@ -114,7 +114,7 @@ Alanine significance
 
 === Aim 2 Train a PLM on phage display data
 
-A masked language diffusion model will be built and trained on the capsid proteins of rhinovirus; the dataset will include all serotypes of rhinovirus
+A masked language model will be built and trained on the capsid proteins of rhinovirus; the dataset will include all serotypes of rhinovirus
 The model will also be trained on metagenomic sequencing data for rhinovirus from SRA, to encompass additional mutations. 
 To further expand this dataset, other Picornaviridae capsid proteins will be included.
 
@@ -134,6 +134,7 @@ These new proteins will be tested against the sera samples from the diverse coho
 Proteins that elicit an immune response in the most patients will be used to further fine-tune the model.
 This will further optimize the model to generate proteins that not only elicit a strong immune response, but are also recognized by a majority of the sera, from adults who have been infected with different serotypes of rhinovirus.
 
-This feedforward process will help identify likely proteins for potential vaccine candidates, where more in-depth testing can be performed on a smaller subset of selected proteins, saving countless hours of testing.
+This iterative process will help identify likely proteins for potential vaccine candidates, where more in-depth testing can be performed on a smaller subset of selected proteins, saving countless hours of testing.
 
+#pagebreak()
 #bibliography("MCB_Build_Anything.bib", title: "References", style: "ieee")

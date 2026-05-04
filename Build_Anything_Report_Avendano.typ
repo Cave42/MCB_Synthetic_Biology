@@ -19,7 +19,7 @@
 #show heading.where(level: 3): it => {
   v(1em, weak: true)
   text(size: 11pt, weight: "bold", smallcaps(it.body))
-  v(0.7em, weak: true)
+  v(1em, weak: true)
 }
 
 // NotesTeX-style callout boxes
@@ -59,7 +59,7 @@ A vaccine or an effective antiviral treatment does not currently exist for rhino
 There are three species of rhinoviruses, A, B, and C, which are then further subdivided into 160 serotypes @leeHumanRhinovirusSpecies2012.
 The variety in rhinoviruses presents a problem in vaccine development: how to create a vaccine that is representative of as many serotypes as possible. 
 Like other members of the Picornaviridae family, rhinoviruses are non-enveloped, enclosed in a protein capsid and there are many regions that are conserved. 
-Identifying rhinovirus epitopes and sites that elicit an immune response could be the key to solving the years-long issue in vaccine development @mcleanVaccineStrategiesInduce2019.
+Identifying rhinovirus epitopes and sites that elicit an immune response across all serotypes could be the key to solving the years-long issue in vaccine development @mcleanVaccineStrategiesInduce2019.
 
 Protein language models (PLMs) have made huge impacts in the field of biology.
 Models such as ESM3 are trained on hundreds of millions of proteins with the ability to condense large datasets and discover new patterns @Simulating500Million.
@@ -110,7 +110,7 @@ The model's sequence embeddings will cluster proteins of similar function togeth
 Novel proteins generated from the model will be screened by checking their semantic similarity, or the proximity to other proteins (within the same functional group) in embedding space from a variety of serotypes.
 
 Since PhiP-Seq only tests for linear epitopes, the PhiP-Seq protein library will be run through AlphaFold to generate 3D structural information, with the model being further fine-tuned on the structural embeddings.
-Additional testing such as surface area accessibility or running the protein through 3D structural binding prediction programs may also be explored.
+Additional testing such as surface area accessibility or running the proteins through 3D structural binding prediction programs may also be explored.
 
 ESM3 will also be fine-tuned on PhiP-Seq expression data and will be used instead of ESM2 as it can be trained on 3D structural information.
 This much larger model will be tested against the previously generated model to determine whether a model trained on hundreds of millions of proteins will outperform one trained on a smaller, more specific dataset.

@@ -2,24 +2,6 @@
 #set page(
   paper: "us-letter",
   margin: 0.5in,
-  header: context {
-    let h1-hits = query(heading.where(level: 1).before(here()))
-    let h2-hits = query(heading.where(level: 2).before(here()))
-    let h1 = if h1-hits.len() > 0 { h1-hits.last().body } else { none }
-    let h2 = if h2-hits.len() > 0 { h2-hits.last().body } else { none }
-    grid(
-      columns: (1fr, auto),
-      align: (left + horizon, right + horizon),
-      if h1 != none { text(size: 9pt, smallcaps(lower(h1))) },
-      if h2 != none {
-        text(size: 9pt, style: "italic", h2)
-        h(1em)
-        text(size: 9pt, counter(page).display())
-      } else {
-        text(size: 9pt, counter(page).display())
-      },
-    )
-  },
 )
 #set text(font: "Arial", size: 11pt, fill: rgb("#111111"))
 #set par(leading: 0.65em, spacing: 1.6em, justify: true)
@@ -71,23 +53,21 @@ Each year, half the world's population contracts some form of the common cold @t
 Cold symptoms, while generally mild, still have large-scale economic impacts due to the effect on productivity @bramleyProductivityLossesRelated2002.
 For immunocompromised individuals, it can be much more severe @kraftSeverityHumanRhinovirus2012.
 There are many viruses responsible for the common cold, but rhinoviruses are responsible for at least half of cold illnesses @turnerCommonCold2012.
-Despite this, rhinovirus research has been overshadowed by influenza and SARS-CoV-2.
+Despite this, rhinovirus research has been overshadowed by research into influenza and SARS-CoV-2.
 A vaccine or an effective antiviral treatment does not currently exist for rhinoviruses @leeClinicalSignificanceRhinoviruses2025.
 
-There are three species of rhinoviruses, A, B, and C, which are then further subdivided into serotypes.
-There exist over 160 serotypes for rhinoviruses @leeHumanRhinovirusSpecies2012.
+There are three species of rhinoviruses, A, B, and C, which are then further subdivided into 160 serotypes @leeHumanRhinovirusSpecies2012.
 The variety in rhinoviruses presents a problem in vaccine development: how to create a vaccine that is representative of as many serotypes as possible. 
-Like other members of the Picornaviridae family, rhinoviruses are non-enveloped, enclosed in a protein capsid.
-There are many regions that are conserved. 
+Like other members of the Picornaviridae family, rhinoviruses are non-enveloped, enclosed in a protein capsid and there are many regions that are conserved. 
 Identifying rhinovirus epitopes and sites that elicit an immune response could be the key to solving the years-long issue in vaccine development @mcleanVaccineStrategiesInduce2019.
 
 Protein language models (PLMs) have made huge impacts in the field of biology.
-Models such as ESM3 are trained on hundreds of millions of proteins with the ability to condense large datasets and discover new patterns in this noise @Simulating500Million.
-PLMs have been used to develop tools for viral forecasting such as CovFit @itoProteinLanguageModel2025a, to model antibody sequences such as AbLang @olsenAbLangAntibodyLanguage2022, and more.
+Models such as ESM3 are trained on hundreds of millions of proteins with the ability to condense large datasets and discover new patterns @Simulating500Million.
+PLMs have been applied for a variety of uses in virology such as developing tools for viral forecasting like CovFit @itoProteinLanguageModel2025a, to modeling antibody sequences such as in AbLang @olsenAbLangAntibodyLanguage2022.
 
 In Phage ImmunoPrecipitation (PhiP-Seq), bacteriophage genetic code can be modified to display short peptide fragments derived from any protein on its capsid.
 The process is high-throughput, where thousands of custom bacteriophages can be generated, assembled, and tested against human sera to elicit an immune response @tiuPhageImmunoPrecipitationSequencing2022.
-Many rhinovirus epitopes are internal and not well studied; PhiP-Seq can display peptide fragments from any protein.
+Many rhinovirus epitopes are more internal and not well studied; PhiP-Seq can display peptide fragments from any protein.
 Designing a PLM trained on PhiP-Seq data could identify important new epitopes for a rhinovirus vaccine. 
 
 == Innovation
@@ -111,9 +91,10 @@ The proteins of this new library will be inserted into the genome of the phage t
 
 Phages will be grown and incubated in a medium with E. coli to ensure that there are multiple copies of each phage. 
 Diluted samples from this phage medium will be tested against human sera.
-Phages that are bound by IgG will be separated, lysed, and sequenced to find which proteins they displayed.
+Phages that are bound by IgG will be separated, lysed, and sequenced. 
+Phage DNA will contain the rhinovirus protein which was displayed, and sequencing counts will show which proteins were targeted the most by the immune system.
 
-The human sera will be from a highly diverse collection of individuals who have all been infected with rhinovirus.
+The human sera will be from a highly diverse collection of individuals who have all been infected with rhinovirus with the goal of collecting patients who have all previously been infected with different serotypes of rhinovirus.
 
 === Aim 2: Train a PLM on phage display data
 
@@ -123,10 +104,10 @@ To further expand this dataset, other Picornaviridae capsid proteins will be inc
 
 This protein language model will then be fine-tuned on the phage display results to predict and generate proteins that elicit a high immune response.
 Phage genomes that contain a rhinovirus protein that elicits an immune response will have higher sequencing counts.
-The model fine-tuning will depend on overall sequencing counts for a given epitope (strength of immune response) and also the number of individual sera samples that elicited any response (recognition of the protein across serotypes).
+The model's fine-tuning will depend on overall sequencing counts for a given epitope (strength of immune response) and also the number of individual sera samples that elicited any response (recognition of the protein across serotypes).
 
 The model's sequence embeddings will cluster proteins of similar function together and will be labeled by rhinovirus serotype. 
-Novel proteins generated from the model will be screened by checking semantic similarity, or the proximity in embedding space to proteins from a variety of serotypes in their functional group.
+Novel proteins generated from the model will be screened by checking their semantic similarity, or the proximity to other proteins (within the same functional group) in embedding space from a variety of serotypes.
 
 Since PhiP-Seq only tests for linear epitopes, the PhiP-Seq protein library will be run through AlphaFold to generate 3D structural information, with the model being further fine-tuned on the structural embeddings.
 Additional testing such as surface area accessibility or running the protein through 3D structural binding prediction programs may also be explored.
@@ -136,12 +117,12 @@ This much larger model will be tested against the previously generated model to 
 
 === Aim 3: Predict epitope sites and produce new phage libraries
 
-Selected novel proteins generated by the model will then be used to generate a new library. 
+Selected novel proteins generated by the model will then be used to design a new library. 
 These new proteins will be tested against the sera samples from the diverse cohort of adults to determine which newly generated proteins elicit the strongest immune response across patients.
 Proteins that elicit an immune response in the most patients will be used to further fine-tune the model.
 This will further optimize the model to generate proteins that not only elicit a strong immune response, but are also elicit a response across all sera.
 
-This iterative process will help identify promising vaccine candidate proteins, where more in-depth testing can be performed on a smaller subset of selected proteins, saving countless hours of testing.
+This iterative process will help identify promising vaccine candidate proteins, where more in-depth testing can be performed on a smaller subset of selected proteins, saving money and countless hours of work.
 
 #pagebreak()
 #bibliography("MCB_Build_Anything.bib", title: "References", style: "ieee")
